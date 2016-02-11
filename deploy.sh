@@ -5,7 +5,7 @@ module add ci
 module add zlib
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make clean
-make -j 2 all
+make -j 2 
 make colordebug
 
 mkdir -p ${REPO_DIR}
