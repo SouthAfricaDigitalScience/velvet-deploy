@@ -1,7 +1,7 @@
 #!/bin/bash -e
 . /etc/profile.d/modules.sh
 
-module add ci
+module add deploy
 module add zlib
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make clean
