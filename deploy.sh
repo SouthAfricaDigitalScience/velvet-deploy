@@ -5,12 +5,14 @@ module add ci
 module add zlib
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make clean
-make 
+make
 make colordebug
 
 mkdir -p ${REPO_DIR}
+echo "making ${SOFT_DIR}"
 mkdir -p ${SOFT_DIR}/bin
-cp velvetg velveth velvetg_de velveth_de ${SOFT_DIR}/bin
+
+cp -v velvetg velveth velvetg_de velveth_de ${SOFT_DIR}/bin
 mkdir -p modules
 (
 cat <<MODULE_FILE
