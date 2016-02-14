@@ -3,16 +3,22 @@
 
 module add deploy
 module add zlib
+echo "making ${SOFT_DIR}"
+mkdir -p ${SOFT_DIR}
+
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make clean
 make
+cp -rvf obj ${SOFT_DIR}/
+# unfortunately, the debug make actually cleans out objdir so we have to move the libs created in the default
+# make before we run colour debug, then we have to move the stuff in colour debug
 make colordebug
+cp -rvf obj ${SOFT_DIR}/
 
-mkdir -p ${REPO_DIR}
 echo "making ${SOFT_DIR}"
-mkdir -p ${SOFT_DIR}/bin
+mkdir -p ${SOFT_DIR}
 
-cp -v velvetg velveth velvetg_de velveth_de ${SOFT_DIR}/bin
+cp -v velvetg velveth velvetg_de velveth_de ${SOFT_DIR}
 # we need to add velvet's code and built files to ${SOFT_DIR} so that oases can use them later
 cp -rvf obj ${SOFT_DIR}/
 cp -rvf src ${SOFT_DIR}/
