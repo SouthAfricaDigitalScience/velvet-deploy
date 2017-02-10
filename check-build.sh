@@ -30,10 +30,13 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       VELVET_VERSION       $VERSION
-setenv       VELVET_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
-prepend-path PATH                 $::env(VELVET_DIR)/bin
+setenv       VELVET_DIR                 /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+prepend-path PATH                       $::env(VELVET_DIR)/bin
 MODULE_FILE
 ) > modules/$VERSION
 
 mkdir -p ${BIOINFORMATICS_MODULES}/${NAME}
 cp modules/$VERSION ${BIOINFORMATICS_MODULES}/${NAME}
+
+module avail ${NAME}
+module add ${NAME}/${VERSION}
