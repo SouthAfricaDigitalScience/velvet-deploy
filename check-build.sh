@@ -3,7 +3,7 @@
 
 . /etc/profile.d/modules.sh
 
-module load ci
+module add ci
 module add zlib
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make test
@@ -40,3 +40,4 @@ cp modules/$VERSION ${BIOINFORMATICS_MODULES}/${NAME}
 
 module avail ${NAME}
 module add ${NAME}/${VERSION}
+which velvetg

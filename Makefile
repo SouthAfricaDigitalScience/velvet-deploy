@@ -61,7 +61,8 @@ zlib:
 clean-zlib :
 	cd $(Z_LIB_DIR) && make clean
 else
-Z_LIB_FILES=-lz
+
+Z_LIB_FILES=-L${ZLIB_DIR}/lib -lz
 
 zlib :
 clean-zlib :
