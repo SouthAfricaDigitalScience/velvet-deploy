@@ -15,6 +15,7 @@ We build versions
 Velvet depends on
 
   * zlib
+  * gcc (for openmp)
 
 # Configuration
 

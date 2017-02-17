@@ -1,5 +1,4 @@
 CC = gcc
-CFLAGS = -Wall
 DEBUG = -g
 LIBS = -lm
 OPT = -O3
@@ -9,7 +8,7 @@ DEF = -D MAXKMERLENGTH=$(MAXKMERLENGTH) -D CATEGORIES=$(CATEGORIES)
 PDFLATEX_VERSION := $(shell pdflatex --version 2> /dev/null)
 
 # Mac OS users: uncomment the following lines
-CFLAGS = -Wall -m64
+CFLAGS = -Wall -m64 -I${ZLIB_DIR}/include
 
 # Sparc/Solaris users: uncomment the following line
 # CFLAGS = -Wall -m64

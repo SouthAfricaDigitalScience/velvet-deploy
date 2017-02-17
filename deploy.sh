@@ -3,6 +3,7 @@
 
 module add deploy
 module add zlib
+module add  gcc/${GCC_VERSION}
 echo "making ${SOFT_DIR}"
 mkdir -p ${SOFT_DIR}
 

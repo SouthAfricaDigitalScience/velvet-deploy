@@ -5,6 +5,7 @@
 
 module add ci
 module add zlib
+module add  gcc/${GCC_VERSION}
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make test
 echo $?
