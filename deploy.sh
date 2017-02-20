@@ -42,8 +42,10 @@ MODULE_FILE
 ) > modules/$VERSION
 
 mkdir -p ${BIOINFORMATICS_MODULES}/${NAME}
-cp modules/$VERSION ${BIOINFORMATICS_MODULES}/${NAME}
+cp -v modules/$VERSION ${BIOINFORMATICS_MODULES}/${NAME}
 
 module  avail ${NAME}
 module add ${NAME}/${VERSION}
+module list
+echo "checking for velvetg"
 which velvetg
