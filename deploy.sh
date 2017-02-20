@@ -19,7 +19,7 @@ cp -rvf obj ${SOFT_DIR}/
 echo "making ${SOFT_DIR}"
 mkdir -p ${SOFT_DIR}
 
-cp -v velvetg velveth velvetg_de velveth_de ${SOFT_DIR}
+cp -v velvetg velveth velvetg_de velveth_de ${SOFT_DIR}/bin
 # we need to add velvet's code and built files to ${SOFT_DIR} so that oases can use them later
 cp -rvf obj ${SOFT_DIR}/
 cp -rvf src ${SOFT_DIR}/
