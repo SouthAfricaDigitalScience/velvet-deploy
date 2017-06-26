@@ -16,7 +16,6 @@
 . /etc/profile.d/modules.sh
 
 module add ci
-module add zlib
 module add gcc/${GCC_VERSION}
 
 SOURCE_FILE=${NAME}_${VERSION}.tgz
