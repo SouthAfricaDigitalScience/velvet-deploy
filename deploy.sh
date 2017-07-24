@@ -22,7 +22,7 @@ mkdir -p ${SOFT_DIR}/bin
 
 cd ${WORKSPACE}/${NAME}_${VERSION}/
 make clean
-make
+CFLAGS="-fPIC" make
 cp -rvf obj ${SOFT_DIR}/
 # unfortunately, the debug make actually cleans out objdir so we have to move the libs created in the default
 # make before we run colour debug, then we have to move the stuff in colour debug
